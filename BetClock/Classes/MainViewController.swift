@@ -23,7 +23,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Setup navigation bar
         let navigationBar = self.navigationController?.navigationBar
         UIApplication.shared.statusBarStyle = .lightContent
-        navigationBar?.barTintColor = UIColor.green
+        navigationBar?.barTintColor = UIColor.init(red: 20/255, green: 120/255, blue: 85/255, alpha: 1)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

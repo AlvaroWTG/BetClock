@@ -97,9 +97,12 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MCE-TL-J71" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Sjh-k7-HLu">
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.078431372550000003" green="0.47058823529999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="UnG-7A-ZHA" kind="relationship" relationship="viewControllers" id="6Up-Ul-rfX"/>
@@ -115,8 +118,9 @@
         <scene sceneID="o4l-tv-KkC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UnG-7A-ZHA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="featured" id="2Tv-O9-g6t"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="2Tv-O9-g6t"/>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L0d-pt-1BE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -155,6 +159,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YAD-wx-bX5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="HzO-aR-Qc5"/>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fHO-sn-6jx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -174,6 +179,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kma-df-hAB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="recents" id="2GZ-Ac-xGO"/>
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="0Qz-KB-zG7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -188,4 +194,5 @@
             <point key="canvasLocation" x="2175" y="767"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.078431372550000003" green="0.47058823529999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
