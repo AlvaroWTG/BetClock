@@ -1,0 +1,6 @@
+framework module Pods_BetClock {
+  umbrella header "Pods-BetClock-umbrella.h"
+
+  export *
+  module * { export * }
+}
