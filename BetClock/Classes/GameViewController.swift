@@ -15,6 +15,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var labelTeamAway: UILabel!
     @IBOutlet weak var labelScoreHome: UILabel!
     @IBOutlet weak var labelScoreAway: UILabel!
+    var row: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,7 @@ class GameViewController: UIViewController {
         UIApplication.shared.statusBarStyle = .lightContent
 
         // Setup the navigation item title
-        self.navigationItem.title = "Game"
+        self.navigationItem.title = "Game #\(self.row)"
 
         // Setup interface
         self.labelTeamHome.text = "PES United"

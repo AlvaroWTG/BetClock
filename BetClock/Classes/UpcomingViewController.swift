@@ -43,7 +43,7 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainCell else {
             fatalError("The dequeued cell is not an instance of MainCell.")
         }
-        cell.labelTitle.text = "Next game"
+        cell.labelTitle.text = "Upcoming Game #\(indexPath.row)"
         return cell
     }
 
