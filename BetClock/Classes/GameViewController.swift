@@ -20,6 +20,22 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
+        // Setup interface
+        self.setupInterface()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Auxiliary functions
+    
+    /**
+     * Auxiliary function that setups the interface
+     */
+    func setupInterface() {
+        
         // Setup navigation bar
         let navigationBar = self.navigationController?.navigationBar
         navigationBar?.barTintColor = UIColor.init(red: 20/255, green: 120/255, blue: 85/255, alpha: 1)
@@ -27,16 +43,11 @@ class GameViewController: UIViewController {
 
         // Setup the navigation item title
         self.navigationItem.title = "Game"
-        
+
         // Setup interface
         self.labelTeamHome.text = "PES United"
         self.labelTeamAway.text = "FC Bayern"
         self.labelScoreHome.text = "1"
         self.labelScoreAway.text = "0"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
