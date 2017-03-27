@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5814DE9EEC0C27CC44D7130C /* Pods_BetClock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B82A5890FD90AF2C0682395 /* Pods_BetClock.framework */; };
+		740A42231E854C0600885694 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 740A42211E854C0600885694 /* Main.storyboard */; };
+		740A42251E854C0600885694 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 740A42241E854C0600885694 /* Assets.xcassets */; };
+		740A42281E854C0600885694 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 740A42261E854C0600885694 /* LaunchScreen.storyboard */; };
+		740A42331E854CC700885694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42311E854CC700885694 /* AppDelegate.swift */; };
+		740A42371E854F1100885694 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42361E854F1100885694 /* MainViewController.swift */; };
+		740A423C1E855F9800885694 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A423B1E855F9800885694 /* SettingsViewController.swift */; };
+		74D3343E1E89116B00F2D16E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3343D1E89116B00F2D16E /* GameViewController.swift */; };
+		74D334401E8911BD00F2D16E /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3343F1E8911BD00F2D16E /* UpcomingViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		146CE56C447AF66558B44F2E /* Pods-BetClock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetClock.release.xcconfig"; path = "Pods/Target Support Files/Pods-BetClock/Pods-BetClock.release.xcconfig"; sourceTree = "<group>"; };
+		740A421A1E854C0600885694 /* BetClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		740A42221E854C0600885694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		740A42241E854C0600885694 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		740A42271E854C0600885694 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		740A42291E854C0600885694 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		740A42301E854CC600885694 /* BetClock-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BetClock-Bridging-Header.h"; sourceTree = "<group>"; };
+		740A42311E854CC700885694 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
+		740A42361E854F1100885694 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Classes/MainViewController.swift; sourceTree = "<group>"; };
+		740A423B1E855F9800885694 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Classes/SettingsViewController.swift; sourceTree = "<group>"; };
+		74D3343D1E89116B00F2D16E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Classes/GameViewController.swift; sourceTree = "<group>"; };
+		74D3343F1E8911BD00F2D16E /* UpcomingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpcomingViewController.swift; path = Classes/UpcomingViewController.swift; sourceTree = "<group>"; };
+		85DA6BD249F95198FF14EBA0 /* Pods-BetClock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetClock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BetClock/Pods-BetClock.debug.xcconfig"; sourceTree = "<group>"; };
+		9B82A5890FD90AF2C0682395 /* Pods_BetClock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetClock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		740A42171E854C0600885694 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5814DE9EEC0C27CC44D7130C /* Pods_BetClock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		740A42111E854C0600885694 = {
+			isa = PBXGroup;
+			children = (
+				740A421C1E854C0600885694 /* BetClock */,
+				740A421B1E854C0600885694 /* Products */,
+				C201871BF3FC7EEDB4759706 /* Pods */,
+				827AF9C2D4B78968B97B1C20 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		740A421B1E854C0600885694 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				740A421A1E854C0600885694 /* BetClock.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		740A421C1E854C0600885694 /* BetClock */ = {
+			isa = PBXGroup;
+			children = (
+				740A42241E854C0600885694 /* Assets.xcassets */,
+				740A422F1E854C6A00885694 /* Classes */,
+				740A42261E854C0600885694 /* LaunchScreen.storyboard */,
+				740A42211E854C0600885694 /* Main.storyboard */,
+				740A42351E854CDD00885694 /* SupportingFiles */,
+			);
+			path = BetClock;
+			sourceTree = "<group>";
+		};
+		740A422F1E854C6A00885694 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				740A42311E854CC700885694 /* AppDelegate.swift */,
+				74D3343D1E89116B00F2D16E /* GameViewController.swift */,
+				740A42361E854F1100885694 /* MainViewController.swift */,
+				740A423B1E855F9800885694 /* SettingsViewController.swift */,
+				74D3343F1E8911BD00F2D16E /* UpcomingViewController.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		740A42351E854CDD00885694 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				740A42301E854CC600885694 /* BetClock-Bridging-Header.h */,
+				740A42291E854C0600885694 /* Info.plist */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		827AF9C2D4B78968B97B1C20 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B82A5890FD90AF2C0682395 /* Pods_BetClock.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C201871BF3FC7EEDB4759706 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85DA6BD249F95198FF14EBA0 /* Pods-BetClock.debug.xcconfig */,
+				146CE56C447AF66558B44F2E /* Pods-BetClock.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		740A42191E854C0600885694 /* BetClock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 740A422C1E854C0600885694 /* Build configuration list for PBXNativeTarget "BetClock" */;
+			buildPhases = (
+				E04E9D8181271F9398F30503 /* [CP] Check Pods Manifest.lock */,
+				740A42161E854C0600885694 /* Sources */,
+				740A42171E854C0600885694 /* Frameworks */,
+				740A42181E854C0600885694 /* Resources */,
+				83FD1817B09B9E0AF80AE611 /* [CP] Embed Pods Frameworks */,
+				11C957DB2D5BE93B4E7B095E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BetClock;
+			productName = BetClock;
+			productReference = 740A421A1E854C0600885694 /* BetClock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		740A42121E854C0600885694 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Alvaro GMH";
+				TargetAttributes = {
+					740A42191E854C0600885694 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5NT5BY9QYB;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 740A42151E854C0600885694 /* Build configuration list for PBXProject "BetClock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 740A42111E854C0600885694;
+			productRefGroup = 740A421B1E854C0600885694 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				740A42191E854C0600885694 /* BetClock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		740A42181E854C0600885694 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				740A42281E854C0600885694 /* LaunchScreen.storyboard in Resources */,
+				740A42251E854C0600885694 /* Assets.xcassets in Resources */,
+				740A42231E854C0600885694 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11C957DB2D5BE93B4E7B095E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BetClock/Pods-BetClock-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83FD1817B09B9E0AF80AE611 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BetClock/Pods-BetClock-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E04E9D8181271F9398F30503 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		740A42161E854C0600885694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74D3343E1E89116B00F2D16E /* GameViewController.swift in Sources */,
+				740A42371E854F1100885694 /* MainViewController.swift in Sources */,
+				740A42331E854CC700885694 /* AppDelegate.swift in Sources */,
+				74D334401E8911BD00F2D16E /* UpcomingViewController.swift in Sources */,
+				740A423C1E855F9800885694 /* SettingsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		740A42211E854C0600885694 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				740A42221E854C0600885694 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		740A42261E854C0600885694 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				740A42271E854C0600885694 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		740A422A1E854C0600885694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		740A422B1E854C0600885694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		740A422D1E854C0600885694 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85DA6BD249F95198FF14EBA0 /* Pods-BetClock.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 5NT5BY9QYB;
+				INFOPLIST_FILE = BetClock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agarcia.BetClock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BetClock/BetClock-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		740A422E1E854C0600885694 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 146CE56C447AF66558B44F2E /* Pods-BetClock.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = 5NT5BY9QYB;
+				INFOPLIST_FILE = BetClock/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.agarcia.BetClock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BetClock/BetClock-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		740A42151E854C0600885694 /* Build configuration list for PBXProject "BetClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				740A422A1E854C0600885694 /* Debug */,
+				740A422B1E854C0600885694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		740A422C1E854C0600885694 /* Build configuration list for PBXNativeTarget "BetClock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				740A422D1E854C0600885694 /* Debug */,
+				740A422E1E854C0600885694 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 740A42121E854C0600885694 /* Project object */;
+}
