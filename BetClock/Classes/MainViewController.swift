@@ -42,7 +42,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
-        return 20
+        return 10
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,7 +58,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: Inherited functions from UITableView delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("Bla!")
+        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 
 }
