@@ -32,7 +32,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // Do any additional setup after loading the view.
 
         // Setup interface
-        self.setupInterface()
+        setupInterface()
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,7 +42,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     //MARK: Inherited functions from UICollectionView data source
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.sponsors.count
+        return sponsors.count
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -54,8 +54,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
             fatalError("The dequeued cell is not an instance of GameCell.")
         }
 
-        let label = UILabel.init(frame: self.frameForLabel())
-        label.text = self.sponsors[indexPath.row]
+        let label = UILabel.init(frame: frameForLabel())
+        label.text = sponsors[indexPath.row]
         label.adjustsFontSizeToFitWidth = true
         label.textColor = Colors.Color3A3A3A
         label.textAlignment = .center
@@ -69,14 +69,14 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        sizePerItem = self.view.frame.size.width / 2.0
+        sizePerItem = view.frame.size.width / 2.0
         return CGSize.init(width: sizePerItem, height: sizePerItem)
     }
 
     //MARK: Inherited functions from UICollectionView delegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        NSLog("tapped %@!", self.sponsors[indexPath.row])
+        NSLog("tapped %@!", sponsors[indexPath.row])
     }
 
     //MARK: Auxiliary functions
@@ -103,17 +103,17 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func setupInterface() {
 
         // Setup navigation bar
-        let navigationBar = self.navigationController?.navigationBar
+        let navigationBar = navigationController?.navigationBar
         navigationBar?.barTintColor = Colors.Color147855
         UIApplication.shared.statusBarStyle = .lightContent
 
         // Setup the navigation item title
-        self.navigationItem.title = "Game #\(self.row)"
+        navigationItem.title = "Game #\(row)"
 
         // Setup interface
-        self.labelTeamHome.text = "PES United"
-        self.labelTeamAway.text = "FC Bayern"
-        self.labelScoreHome.text = "1"
-        self.labelScoreAway.text = "0"
+        labelTeamHome.text = "PES United"
+        labelTeamAway.text = "FC Bayern"
+        labelScoreHome.text = "1"
+        labelScoreAway.text = "0"
     }
 }

@@ -15,12 +15,12 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
 
         // Setup navigation bar
-        let navigationBar = self.navigationController?.navigationBar
+        let navigationBar = navigationController?.navigationBar
         UIApplication.shared.statusBarStyle = .lightContent
         navigationBar?.barTintColor = Colors.Color147855
 
         // Setup the navigation item title
-        self.navigationItem.title = "Upcoming games"
+        navigationItem.title = "Upcoming games"
     }
 
     override func didReceiveMemoryWarning() {

@@ -21,7 +21,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        self.setupInterface()
+        setupInterface()
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,9 +51,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: Inherited function from UITableView delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let viewController = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
         viewController.row = indexPath.row
-        self.navigationController?.pushViewController(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     //MARK: Auxiliary functions
@@ -64,13 +64,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func setupInterface() {
 
         // Setup navigation bar
-        let navigationBar = self.navigationController?.navigationBar
+        let navigationBar = navigationController?.navigationBar
         UIApplication.shared.statusBarStyle = .lightContent
         navigationBar?.barTintColor = Colors.Color147855
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        self.navigationItem.title = "BetClock"
+        // Setup navigation item title
+        navigationItem.title = "BetClock"
     }
 
     /**
@@ -87,7 +86,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             var response: URLResponse?
             NSLog("[NSURLConnection] Log: Sending synch request %@", request.url?.absoluteString ?? "")
             let responseData = try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response)
-            return self.deserializeJson(serializedJson: responseData as NSData)
+            return deserializeJson(serializedJson: responseData as NSData)
         } catch let error as NSError {
             NSLog("[NSURLConnection] Error! Found an error. Error %d: %@", error.code, error.localizedDescription)
         }
