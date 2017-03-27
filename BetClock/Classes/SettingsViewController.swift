@@ -12,8 +12,15 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+
+        // Setup navigation bar
+        let navigationBar = self.navigationController?.navigationBar
+        navigationBar?.barTintColor = UIColor.init(red: 20/255, green: 120/255, blue: 85/255, alpha: 1)
+        UIApplication.shared.statusBarStyle = .lightContent
+
+        // Setup the navigation item title
+        self.navigationItem.title = "Settings"
     }
 
     override func didReceiveMemoryWarning() {
