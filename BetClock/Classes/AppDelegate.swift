@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Customize the navigation and tab bar appearances
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         UITabBar.appearance().tintColor = UIColor.init(red: 20/255, green: 120/255, blue: 85/255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor.white
 
         return true
     }
