@@ -14,6 +14,8 @@
 		740A42331E854CC700885694 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42311E854CC700885694 /* AppDelegate.swift */; };
 		740A42371E854F1100885694 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A42361E854F1100885694 /* MainViewController.swift */; };
 		740A423C1E855F9800885694 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740A423B1E855F9800885694 /* SettingsViewController.swift */; };
+		74D3343E1E89116B00F2D16E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3343D1E89116B00F2D16E /* GameViewController.swift */; };
+		74D334401E8911BD00F2D16E /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3343F1E8911BD00F2D16E /* UpcomingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		740A42311E854CC700885694 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		740A42361E854F1100885694 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Classes/MainViewController.swift; sourceTree = "<group>"; };
 		740A423B1E855F9800885694 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Classes/SettingsViewController.swift; sourceTree = "<group>"; };
+		74D3343D1E89116B00F2D16E /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = Classes/GameViewController.swift; sourceTree = "<group>"; };
+		74D3343F1E8911BD00F2D16E /* UpcomingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UpcomingViewController.swift; path = Classes/UpcomingViewController.swift; sourceTree = "<group>"; };
 		85DA6BD249F95198FF14EBA0 /* Pods-BetClock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BetClock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BetClock/Pods-BetClock.debug.xcconfig"; sourceTree = "<group>"; };
 		9B82A5890FD90AF2C0682395 /* Pods_BetClock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BetClock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,8 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				740A42311E854CC700885694 /* AppDelegate.swift */,
+				74D3343D1E89116B00F2D16E /* GameViewController.swift */,
 				740A42361E854F1100885694 /* MainViewController.swift */,
 				740A423B1E855F9800885694 /* SettingsViewController.swift */,
+				74D3343F1E8911BD00F2D16E /* UpcomingViewController.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -234,8 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D3343E1E89116B00F2D16E /* GameViewController.swift in Sources */,
 				740A42371E854F1100885694 /* MainViewController.swift in Sources */,
 				740A42331E854CC700885694 /* AppDelegate.swift in Sources */,
+				74D334401E8911BD00F2D16E /* UpcomingViewController.swift in Sources */,
 				740A423C1E855F9800885694 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
