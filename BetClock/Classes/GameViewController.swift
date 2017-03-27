@@ -74,9 +74,24 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     //MARK: Inherited functions from UICollectionView delegate
+
+    func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
+        return indexPath.row < sponsors.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? GameCell
+        cell?.contentView.backgroundColor = Colors.ColorF0F0F0
+    }
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         NSLog("tapped %@!", sponsors[indexPath.row])
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as? GameCell
+        cell?.contentView.backgroundColor = nil
     }
 
     //MARK: Auxiliary functions
