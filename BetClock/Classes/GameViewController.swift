@@ -56,14 +56,14 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         let label = UILabel.init(frame: self.frameForLabel())
         label.text = self.sponsors[indexPath.row]
-        label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = UIColor.blue
+        label.textColor = Colors.Color3A3A3A
+        label.textAlignment = .center
         label.numberOfLines = 0
         cell.addSubview(label)
 
         // Setup border color and width for cell
-        cell.layer.borderColor = UIColor.blue.cgColor;
+        cell.layer.borderColor = Colors.ColorF0F0F0.cgColor;
         cell.layer.borderWidth = 0.5;
         return cell
     }
@@ -86,11 +86,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
      * @param isImage The boolean parameter whether is image or not
      */
     func frameForLabel() -> CGRect {
-        if sizePerItem == 160.0 {
+        if sizePerItem == Size.SizeIphone5 {
             return CGRect.init(x: 8, y: 106, width: 144, height: 46)
-        } else if sizePerItem == 187.0 {
+        } else if sizePerItem == Size.SizeIphone6 {
             return CGRect.init(x: 8, y: 121, width: 171, height: 58)
-        } else if sizePerItem == 207.0 {
+        } else if sizePerItem == Size.SizeIphone6plus {
             return CGRect.init(x: 8, y: 131, width: 191, height: 68)
         } else {
             return CGRect.init(x: 8, y: 106, width: 144, height: 46)
@@ -104,7 +104,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         // Setup navigation bar
         let navigationBar = self.navigationController?.navigationBar
-        navigationBar?.barTintColor = UIColor.init(red: 20/255, green: 120/255, blue: 85/255, alpha: 1)
+        navigationBar?.barTintColor = Colors.Color147855
         UIApplication.shared.statusBarStyle = .lightContent
 
         // Setup the navigation item title
