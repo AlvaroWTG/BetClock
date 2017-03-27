@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UpcomingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class UpcomingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,18 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
     //MARK: Inherited functions from UITableView delegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("Setting reminder!")
+        let alertView = UIAlertView.init(title: "Information", message: "Do you want to setup a reminder for this game?", delegate: self, cancelButtonTitle: "No, thanks")
+        alertView.addButton(withTitle: "Yes, please")
+        alertView.show()
+    }
+
+    //MARK: Inherited functions from UIAlertView delegate
+    func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
+        if buttonIndex == alertView.cancelButtonIndex { // No
+            NSLog("Log: Avoid setting reminder for game")
+        } else { // Yes
+            NSLog("Log: Setting reminder for this game")
+        }
     }
 
 }
