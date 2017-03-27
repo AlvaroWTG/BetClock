@@ -12,6 +12,7 @@ class MainCell: UITableViewCell {
 
     //MARK: Properties
     @IBOutlet weak var labelTitle: UILabel!
+    @IBOutlet weak var imageIcon: UIImageView!
 }
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -22,14 +23,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         // Setup navigation bar
         let navigationBar = self.navigationController?.navigationBar
-        UIApplication.shared.statusBarStyle = .lightContent
         navigationBar?.barTintColor = UIColor.init(red: 20/255, green: 120/255, blue: 85/255, alpha: 1)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        UIApplication.shared.statusBarStyle = .lightContent
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.title = "BetClock"
     }
 
     override func didReceiveMemoryWarning() {
