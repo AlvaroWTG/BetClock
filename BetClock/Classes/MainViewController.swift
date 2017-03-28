@@ -29,7 +29,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
 
-    //MARK: Inherited functions from UITableView data source
+    //MARK: - Inherited functions from UITableView data source
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -48,7 +49,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
 
-    //MARK: Inherited function from UITableView delegate
+    //MARK: - Inherited function from UITableView delegate
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let viewController = storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
@@ -56,7 +58,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationController?.pushViewController(viewController, animated: true)
     }
 
-    //MARK: Auxiliary functions
+    //MARK: - Auxiliary functions
 
     /**
      * Auxiliary function that setups the interface
@@ -93,7 +95,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return NSDictionary.init()
     }
 
-    //MARK: JSON de-/serialization auxiliary functions
+    //MARK: - JSON de-/serialization auxiliary functions
 
     /**
      * Auxiliary function that obtain a json from the serialized one

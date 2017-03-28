@@ -29,7 +29,8 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
 
-    //MARK: Inherited functions from UITableView data source
+    //MARK: - Inherited functions from UITableView data source
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -48,7 +49,7 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
 
-    //MARK: Inherited functions from UITableView delegate
+    //MARK: - Inherited functions from UITableView delegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -57,7 +58,7 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
         alertView.show()
     }
 
-    //MARK: Inherited functions from UIAlertView delegate
+    //MARK: - Inherited functions from UIAlertView delegate
 
     func alertView(_ alertView: UIAlertView, clickedButtonAt buttonIndex: Int) {
         if buttonIndex == alertView.cancelButtonIndex { // No
@@ -67,7 +68,7 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
         }
     }
 
-    //MARK: Auxiliary functions
+    //MARK: - Auxiliary functions
 
     func scheduleLocalPushNotification() {
         NSLog("[UNNotification] Log: Setting reminder for this game")

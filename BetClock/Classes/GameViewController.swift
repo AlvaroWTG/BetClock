@@ -40,7 +40,8 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         // Dispose of any resources that can be recreated.
     }
 
-    //MARK: Inherited functions from UICollectionView data source
+    //MARK: - Inherited functions from UICollectionView data source
+
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sponsors.count
     }
@@ -73,7 +74,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return CGSize.init(width: sizePerItem, height: sizePerItem)
     }
 
-    //MARK: Inherited functions from UICollectionView delegate
+    //MARK: - Inherited functions from UICollectionView delegate
 
     func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return indexPath.row < sponsors.count
@@ -94,7 +95,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell?.contentView.backgroundColor = nil
     }
 
-    //MARK: Auxiliary functions
+    //MARK: - Auxiliary functions
     
     /**
      * Auxiliary function that returns the frame size for a cell element

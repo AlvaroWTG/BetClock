@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    //MARK: Inherited functions from UILocalNotification delegate
+    //MARK: - Inherited functions from UILocalNotification delegate
 
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         if application.applicationState == .active {
@@ -92,7 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         completionHandler([.alert,.sound]) // Play sound and show alert to the user
     }
 
-    //MARK: Auxiliary functions
+    //MARK: - Auxiliary functions
 
     func requestNotificationsAuthorization() {
         if #available(iOS 10.0, *) {
