@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainCell: UITableViewCell {
 
@@ -22,6 +23,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Do any additional setup after loading the view.
 
         setupInterface()
+        sendSynchronousRequest(requestSession: "https://www.betfair.es/exchange/tennis")
     }
 
     override func didReceiveMemoryWarning() {
@@ -132,5 +134,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             NSLog("[JSONSerialization] Error! Found an error. Error %d: %@", error.code, error.localizedDescription)
         }
         return NSData.init()
+    }
+    
+    /**
+     * Auxiliary function that obtains the reply to a request
+     * - parameter requestSession: The request session that needs a reply
+     */
+    func sendSynchronousRequest(requestSession: String) {
+        NSLog("[Alamofire] Log: Sending request to %@", requestSession)
+        var request = URLRequest.init(url: URL.init(string: requestSession)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        Alamofire.request(request).responseString { response in
+            NSLog("[Alamofire] Log: Server response: \(response.result.description)")
+            if let html = response.result.value {
+                print(html)
+            }
+        }
     }
 }
