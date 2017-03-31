@@ -16,9 +16,8 @@ class UpcomingViewController: UIViewController, UITableViewDelegate, UITableView
         // Do any additional setup after loading the view.
 
         // Setup navigation bar
-        let navigationBar = navigationController?.navigationBar
+        navigationController?.navigationBar.barTintColor = Configuration.Color.Color147855
         UIApplication.shared.statusBarStyle = .lightContent
-        navigationBar?.barTintColor = Colors.Color147855
 
         // Setup the navigation item title
         navigationItem.title = "Upcoming games"

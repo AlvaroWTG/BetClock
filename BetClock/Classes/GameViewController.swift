@@ -58,13 +58,13 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let label = UILabel.init(frame: frameForLabel())
         label.text = sponsors[indexPath.row]
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = Colors.Color3A3A3A
+        label.textColor = Configuration.Color.Color3A3A3A
         label.textAlignment = .center
         label.numberOfLines = 0
         cell.addSubview(label)
 
         // Setup border color and width for cell
-        cell.layer.borderColor = Colors.ColorF0F0F0.cgColor;
+        cell.layer.borderColor = Configuration.Color.ColorF0F0F0.cgColor;
         cell.layer.borderWidth = 0.5;
         return cell
     }
@@ -82,7 +82,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as? GameCell
-        cell?.contentView.backgroundColor = Colors.ColorF0F0F0
+        cell?.contentView.backgroundColor = Configuration.Color.ColorF0F0F0
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -102,11 +102,11 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
      * @param isImage The boolean parameter whether is image or not
      */
     func frameForLabel() -> CGRect {
-        if sizePerItem == Size.SizeIphone5 {
+        if sizePerItem == Configuration.Size.SizeIphone5 {
             return CGRect.init(x: 8, y: 106, width: 144, height: 46)
-        } else if sizePerItem == Size.SizeIphone6 {
+        } else if sizePerItem == Configuration.Size.SizeIphone6 {
             return CGRect.init(x: 8, y: 121, width: 171, height: 58)
-        } else if sizePerItem == Size.SizeIphone6plus {
+        } else if sizePerItem == Configuration.Size.SizeIphone6plus {
             return CGRect.init(x: 8, y: 131, width: 191, height: 68)
         } else {
             return CGRect.init(x: 8, y: 106, width: 144, height: 46)
@@ -119,8 +119,7 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func setupInterface() {
 
         // Setup navigation bar
-        let navigationBar = navigationController?.navigationBar
-        navigationBar?.barTintColor = Colors.Color147855
+        navigationController?.navigationBar.barTintColor = Configuration.Color.Color147855
         UIApplication.shared.statusBarStyle = .lightContent
 
         // Setup the navigation item title

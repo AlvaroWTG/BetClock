@@ -13,6 +13,7 @@ import Kanna
 class MainCell: UITableViewCell {
 
     //MARK: Properties
+
     @IBOutlet weak var labelTitle: UILabel!
     @IBOutlet weak var imageIcon: UIImageView!
 }
@@ -103,9 +104,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func setupInterface() {
 
         // Setup navigation bar
-        let navigationBar = navigationController?.navigationBar
+        navigationController?.navigationBar.barTintColor = Configuration.Color.Color147855
         UIApplication.shared.statusBarStyle = .lightContent
-        navigationBar?.barTintColor = Colors.Color147855
 
         // Setup navigation item title
         navigationItem.title = "BetClock"
