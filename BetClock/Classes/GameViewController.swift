@@ -19,12 +19,14 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     //MARK: Properties
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var labelScoreHome: UILabel!
-    @IBOutlet weak var labelScoreAway: UILabel!
     @IBOutlet weak var labelTeamHome: UILabel!
     @IBOutlet weak var labelTeamAway: UILabel!
+    @IBOutlet weak var labelScore: UILabel!
     var sponsors: [String] = ["Bet365", "BetFair", "Bet4", "Bet5"]
     var sizePerItem: CGFloat = 0
+    var homeTeam: String = ""
+    var awayTeam: String = ""
+    var score: String = ""
     var row: Int = 0
 
     override func viewDidLoad() {
@@ -126,9 +128,10 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         navigationItem.title = "Game #\(row)"
 
         // Setup interface
-        labelTeamHome.text = "PES United"
-        labelTeamAway.text = "FC Bayern"
-        labelScoreHome.text = "1"
-        labelScoreAway.text = "0"
+        labelTeamHome.adjustsFontSizeToFitWidth = true
+        labelTeamAway.adjustsFontSizeToFitWidth = true
+        labelTeamHome.text = "\(homeTeam)"
+        labelTeamAway.text = "\(awayTeam)"
+        labelScore.text = "\(score)"
     }
 }

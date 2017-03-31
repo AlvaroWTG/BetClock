@@ -73,6 +73,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let viewController = storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+        viewController.homeTeam = homeTeams[indexPath.row]
+        viewController.awayTeam = awayTeams[indexPath.row]
+        viewController.score = scores[indexPath.row]
         viewController.row = indexPath.row
         navigationController?.pushViewController(viewController, animated: true)
     }
