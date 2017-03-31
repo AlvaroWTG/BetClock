@@ -14,11 +14,20 @@ class MainCell: UITableViewCell {
 
     //MARK: Properties
 
+    /** Property that represents the label for cell title */
     @IBOutlet weak var labelTitle: UILabel!
+    /** Property that represents the image view for the game icon */
     @IBOutlet weak var imageIcon: UIImageView!
 }
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    //MARK: Properties
+
+    /** Property that represents the main table view */
+    @IBOutlet weak var tableView: UITableView!
+    /** Property that represents the list of games obtained */
+    var games:Array<String> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +50,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
-        return 10
+        return games.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,7 +59,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainCell else {
             fatalError("The dequeued cell is not an instance of MainCell.")
         }
-        cell.labelTitle.text = "Game #\(indexPath.row)"
+        cell.labelTitle.text = games[indexPath.row]
+        cell.labelTitle.numberOfLines = 0
         return cell
     }
 
