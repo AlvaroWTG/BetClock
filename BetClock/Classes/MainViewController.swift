@@ -79,6 +79,25 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
+
+    /**
+     * Auxiliary function that parse initial content
+     * - parameter html: The html string-value to parse
+     */
+    func parse(html: String) {
+
+        // Navigate into the container
+        let container = html.substring(from: (range?.upperBound)!)
+
+        // Navigate into the container hybrid containing the rows
+        let containerHybrid = container.substring(from: (range?.upperBound)!)
+
+        // Loop around the rows and get links and wods
+        if let document = HTML(html: containerHybrid, encoding: .utf8) {
+        }
+    }
+
+    /**
      * Auxiliary function that setups the interface
      */
     func setupInterface() {
