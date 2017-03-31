@@ -128,10 +128,10 @@ class GameViewController: UIViewController, UICollectionViewDelegate, UICollecti
         navigationItem.title = "Game #\(row)"
 
         // Setup interface
+        labelScore.text = score.isEmpty ? "Upcoming" : "\(score)"
         labelTeamHome.adjustsFontSizeToFitWidth = true
         labelTeamAway.adjustsFontSizeToFitWidth = true
         labelTeamHome.text = "\(homeTeam)"
         labelTeamAway.text = "\(awayTeam)"
-        labelScore.text = "\(score)"
     }
 }

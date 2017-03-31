@@ -108,35 +108,41 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             for node in html.css(Configuration.Tag.TagSpan) { // loop for nodes
                 let range = node.innerHTML?.range(of: Configuration.Tag.TagInPlay)
                 if range != nil { // if found, append content
-                    let gameHTML = node.innerHTML
-                    var element = ""
-                    var range = gameHTML?.range(of: Configuration.Tag.TagTeamHome)
-                    if range != nil { // found home team
-                        element = (gameHTML!.substring(from: (range?.upperBound)!))
-                        range = element.range(of: Configuration.Tag.TagSpanEnd)
-                        element = element.substring(to: (range?.lowerBound)!)
-                        homeTeams.append(element)
-                    }
-                    range = gameHTML?.range(of: Configuration.Tag.TagScore)
-                    if range != nil { // found score
-                        element = (gameHTML!.substring(from: (range?.upperBound)!))
-                        range = element.range(of: Configuration.Tag.TagSpanEnd)
-                        element = element.substring(to: (range?.lowerBound)!)
-                        scores.append(element)
-                    }
-                    range = gameHTML?.range(of: Configuration.Tag.TagTeamAway)
-                    if range != nil { // found away team
-                        element = (gameHTML!.substring(from: (range?.upperBound)!))
-                        range = element.range(of: Configuration.Tag.TagSpanEnd)
-                        element = element.substring(to: (range?.lowerBound)!)
-                        awayTeams.append(element)
-                    }
+                    parseElement(category: 0, html: node.innerHTML!, key: Configuration.Tag.TagTeamHome)
+                    parseElement(category: 1, html: node.innerHTML!, key: Configuration.Tag.TagScore)
+                    parseElement(category: 2, html: node.innerHTML!, key: Configuration.Tag.TagTeamAway)
                 }
             }
         } else {
             NSLog("[Kanna] Error! An error ocurred. Error 404 - HTML document failed to create")
         }
         tableView.reloadData()
+    }
+
+    /**
+     * Auxiliary function that parse and element
+     * - parameter category: The index of the category
+     * - parameter html: The html string-value to parse
+     * - parameter key: The key string-value to parse for
+     */
+    func parseElement(category: Int, html: String, key: String) {
+        var element = ""
+        var range = html.range(of: key)
+        if range != nil { // found element
+            element = (html.substring(from: (range?.upperBound)!))
+            range = element.range(of: Configuration.Tag.TagSpanEnd)
+            element = element.substring(to: (range?.lowerBound)!)
+        }
+        switch category {
+            case 0: // home team
+                homeTeams.append(element)
+            case 1: // score
+                scores.append(element)
+            case 2: // away team
+                awayTeams.append(element)
+            default:
+                print("unknown")
+        }
     }
 
     /**
