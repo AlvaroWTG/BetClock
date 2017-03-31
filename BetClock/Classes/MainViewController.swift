@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Kanna
 
 class MainCell: UITableViewCell {
 
@@ -22,8 +23,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
+        // Fetch content and setup interface
+        DispatchQueue.global().async {self.fetch()}
         setupInterface()
-        sendSynchronousRequest(requestSession: "https://www.betfair.es/exchange/tennis")
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +65,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: - Auxiliary functions
 
     /**
+     * Auxiliary function that fetchs html content
+     */
+    func fetch() {
+        let requestSession = "https://www.betfair.es/exchange/inplay"
+        NSLog("[Alamofire] Log: Sending request to %@", requestSession)
+        var request = URLRequest.init(url: URL.init(string: requestSession)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        Alamofire.request(request).responseString { response in
+            NSLog("[Alamofire] Log: Server response: \(response.result.description)")
+            if let html = response.result.value {
+                self.parse(html: html)
+            }
+        }
+    }
      * Auxiliary function that setups the interface
      */
     func setupInterface() {
@@ -134,21 +150,5 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             NSLog("[JSONSerialization] Error! Found an error. Error %d: %@", error.code, error.localizedDescription)
         }
         return NSData.init()
-    }
-    
-    /**
-     * Auxiliary function that obtains the reply to a request
-     * - parameter requestSession: The request session that needs a reply
-     */
-    func sendSynchronousRequest(requestSession: String) {
-        NSLog("[Alamofire] Log: Sending request to %@", requestSession)
-        var request = URLRequest.init(url: URL.init(string: requestSession)!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        Alamofire.request(request).responseString { response in
-            NSLog("[Alamofire] Log: Server response: \(response.result.description)")
-            if let html = response.result.value {
-                print(html)
-            }
-        }
     }
 }
