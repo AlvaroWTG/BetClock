@@ -85,27 +85,30 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         request.httpMethod = "GET"
         Alamofire.request(request).responseString { response in
             NSLog("[Alamofire] Log: Server response: \(response.result.description)")
-            if let html = response.result.value {
-                self.parse(html: html)
+            if let contents = response.result.value {
+                self.parse(contents: contents)
             }
         }
     }
 
     /**
      * Auxiliary function that parse initial content
-     * - parameter html: The html string-value to parse
+     * - parameter contents: The content string-value to parse
      */
-    func parse(html: String) {
-
-        // Navigate into the container
-        let container = html.substring(from: (range?.upperBound)!)
-
-        // Navigate into the container hybrid containing the rows
-        let containerHybrid = container.substring(from: (range?.upperBound)!)
-
-        // Loop around the rows and get links and wods
-        if let document = HTML(html: containerHybrid, encoding: .utf8) {
+    func parse(contents: String) {
+        if let html = HTML(html: contents, encoding: .utf8) { // create html document
+            NSLog("[Kanna] Log: HTML document (ID:%@) created...", html.title ?? "unknown")
+            for node in html.css(Configuration.Tag.TagSpan) { // loop for nodes
+                let range = node.innerHTML?.range(of: Configuration.Tag.TagInPlay)
+                if range != nil { // if found, append content
+                    let game = trim(text: node.text!)
+                    games.append(game)
+                }
+            }
+        } else {
+            NSLog("[Kanna] Error! An error ocurred. Error 404 - HTML document failed to create")
         }
+        tableView.reloadData()
     }
 
     /**
@@ -119,6 +122,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         // Setup navigation item title
         navigationItem.title = "BetClock"
+    }
+
+    /**
+     * Auxiliary function that returns a trimmed text
+     * - parameter text: The text string-value to trim
+     */
+    func trim(text: String) -> String {
+        let result = text.replacingOccurrences(of: "\n", with: "")
+        return result.replacingOccurrences(of: "   ", with: "")
     }
 
     //MARK: - JSON de-/serialization auxiliary functions
