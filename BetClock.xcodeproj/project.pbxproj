@@ -128,6 +128,7 @@
 				740A42181E854C0600885694 /* Resources */,
 				83FD1817B09B9E0AF80AE611 /* [CP] Embed Pods Frameworks */,
 				11C957DB2D5BE93B4E7B095E /* [CP] Copy Pods Resources */,
+				74CA27C61E8BA47D00DAAE24 /* Script build */,
 			);
 			buildRules = (
 			);
@@ -202,6 +203,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BetClock/Pods-BetClock-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		74CA27C61E8BA47D00DAAE24 /* Script build */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Script build";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "buildNumber=`/bin/date +%Y%m%d%H%M%S`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
 		};
 		83FD1817B09B9E0AF80AE611 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

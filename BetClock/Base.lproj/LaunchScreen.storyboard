@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Text-Light.otf">
+            <string>SFUIText-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -22,19 +27,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BetClock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWn-rh-vfz">
-                                <rect key="frame" x="16" y="269" width="288" height="30"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright © 2017 Alvaro Garcia-Moya. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="7hu-Fp-pPn">
+                                <rect key="frame" x="16" y="528" width="288" height="20"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BetClock" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6er-nq-RfT">
+                                <rect key="frame" x="16" y="268" width="288" height="30"/>
+                                <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vectorpaint" translatesAutoresizingMaskIntoConstraints="NO" id="oXx-zi-d6g">
+                                <rect key="frame" x="106" y="152" width="108" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="zEb-HK-YHW"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.47058823529999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lWn-rh-vfz" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Qwg-GK-Y5E"/>
-                            <constraint firstItem="lWn-rh-vfz" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="S7m-r0-2yC"/>
-                            <constraint firstItem="lWn-rh-vfz" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="249" id="UzF-c1-SW1"/>
-                            <constraint firstItem="lWn-rh-vfz" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="d9j-Jh-Ue1"/>
+                            <constraint firstItem="6er-nq-RfT" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="0Yo-rG-Zgz"/>
+                            <constraint firstItem="6er-nq-RfT" firstAttribute="trailing" secondItem="7hu-Fp-pPn" secondAttribute="trailing" id="Hqg-4a-DGJ"/>
+                            <constraint firstItem="6er-nq-RfT" firstAttribute="top" secondItem="oXx-zi-d6g" secondAttribute="bottom" constant="8" symbolic="YES" id="ZlU-7y-5CF"/>
+                            <constraint firstItem="oXx-zi-d6g" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="132" id="a7D-M2-rZa"/>
+                            <constraint firstItem="6er-nq-RfT" firstAttribute="leading" secondItem="7hu-Fp-pPn" secondAttribute="leading" id="b3E-fb-taG"/>
+                            <constraint firstAttribute="bottom" secondItem="7hu-Fp-pPn" secondAttribute="bottom" constant="20" symbolic="YES" id="gYk-zL-ppI"/>
+                            <constraint firstItem="oXx-zi-d6g" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="90" id="n0H-8Q-BNH"/>
+                            <constraint firstItem="6er-nq-RfT" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="s2Y-zo-c8c"/>
+                            <constraint firstItem="oXx-zi-d6g" firstAttribute="centerX" secondItem="6er-nq-RfT" secondAttribute="centerX" id="zV5-Yq-bDZ"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -43,4 +65,7 @@
             <point key="canvasLocation" x="52.5" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="vectorpaint" width="64" height="64"/>
+    </resources>
 </document>

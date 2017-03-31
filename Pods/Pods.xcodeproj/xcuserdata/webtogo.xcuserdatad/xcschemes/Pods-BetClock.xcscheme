@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8DF0FD4DE059057687BC560B753024EB"
+               BlueprintIdentifier = "049189D52DF291E93884F7352DFD29AB"
                BuildableName = "Pods_BetClock.framework"
                BlueprintName = "Pods-BetClock"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8DF0FD4DE059057687BC560B753024EB"
+            BlueprintIdentifier = "049189D52DF291E93884F7352DFD29AB"
             BuildableName = "Pods_BetClock.framework"
             BlueprintName = "Pods-BetClock"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -9,16 +9,25 @@
 import UIKit
 import UserNotifications
 
-struct Colors { // Constants for color definitions used in the app
-    static let Color147855 = UIColor.init(red: 20/255, green: 120/255, blue: 85/255, alpha: 1)
-    static let ColorF0F0F0 = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
-    static let Color3A3A3A = UIColor.init(red: 56/255, green: 56/255, blue: 56/255, alpha: 1)
-}
-
-struct Size { // Constants for screen size used in the app
-    static let SizeIphone5 = 160.0 as CGFloat
-    static let SizeIphone6 = 187.0 as CGFloat
-    static let SizeIphone6plus = 207.0 as CGFloat
+struct Configuration {
+    struct Color { // Constants for color definitions used in the app
+        static let Color147855 = UIColor.init(red: 20/255, green: 120/255, blue: 85/255, alpha: 1)
+        static let ColorF0F0F0 = UIColor.init(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+        static let Color3A3A3A = UIColor.init(red: 56/255, green: 56/255, blue: 56/255, alpha: 1)
+    }
+    struct Size { // Constants for screen size used in the app
+        static let SizeIphone5 = 160.0 as CGFloat
+        static let SizeIphone6 = 187.0 as CGFloat
+        static let SizeIphone6plus = 207.0 as CGFloat
+    }
+    struct Tag { // Constants for tags on the HTML
+        static let TagInPlay = "<span class=\"inplaynow-score\">"
+        static let TagTeamHome = "<span class=\"home-team\">"
+        static let TagTeamAway = "<span class=\"away-team\">"
+        static let TagScore = "<span class=\"result\">"
+        static let TagSpanEnd = "</span>"
+        static let TagSpan = "span"
+    }
 }
 
 @UIApplicationMain
@@ -32,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
         // Customize the navigation and tab bar appearances
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-        UITabBar.appearance().tintColor = Colors.Color147855
+        UITabBar.appearance().tintColor = Configuration.Color.Color147855
         UINavigationBar.appearance().tintColor = UIColor.white
         requestNotificationsAuthorization()
 
@@ -61,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    //MARK: Inherited functions from UILocalNotification delegate
+    //MARK: - Inherited functions from UILocalNotification delegate
 
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         if application.applicationState == .active {
@@ -92,7 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         completionHandler([.alert,.sound]) // Play sound and show alert to the user
     }
 
-    //MARK: Auxiliary functions
+    //MARK: - Auxiliary functions
 
     func requestNotificationsAuthorization() {
         if #available(iOS 10.0, *) {

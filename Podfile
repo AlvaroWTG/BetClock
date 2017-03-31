@@ -6,5 +6,7 @@ target 'BetClock' do
     use_frameworks!
 
     # Pods for BetClock
+    pod 'Kanna'
+    pod 'Alamofire'
 
 end
