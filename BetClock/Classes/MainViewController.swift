@@ -26,8 +26,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     /** Property that represents the main table view */
     @IBOutlet weak var tableView: UITableView!
-    /** Property that represents the list of games obtained */
-    var games:Array<String> = []
+    /** Property that represents the list of scores obtained */
+    var scores:Array<String> = []
+    /** Property that represents the list of home teams obtained */
+    var homeTeams:Array<String> = []
+    /** Property that represents the list of away teams obtained */
+    var awayTeams:Array<String> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +54,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView:UITableView, numberOfRowsInSection section:Int) -> Int {
-        return games.count
+        return scores.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,7 +63,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell", for: indexPath) as? MainCell else {
             fatalError("The dequeued cell is not an instance of MainCell.")
         }
-        cell.labelTitle.text = games[indexPath.row]
+        cell.labelTitle.text = "\(homeTeams[indexPath.row])\n\(awayTeams[indexPath.row])"
         cell.labelTitle.numberOfLines = 0
         return cell
     }
@@ -101,8 +105,29 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             for node in html.css(Configuration.Tag.TagSpan) { // loop for nodes
                 let range = node.innerHTML?.range(of: Configuration.Tag.TagInPlay)
                 if range != nil { // if found, append content
-                    let game = trim(text: node.text!)
-                    games.append(game)
+                    let gameHTML = node.innerHTML
+                    var element = ""
+                    var range = gameHTML?.range(of: Configuration.Tag.TagTeamHome)
+                    if range != nil { // found home team
+                        element = (gameHTML!.substring(from: (range?.upperBound)!))
+                        range = element.range(of: Configuration.Tag.TagSpanEnd)
+                        element = element.substring(to: (range?.lowerBound)!)
+                        homeTeams.append(element)
+                    }
+                    range = gameHTML?.range(of: Configuration.Tag.TagScore)
+                    if range != nil { // found score
+                        element = (gameHTML!.substring(from: (range?.upperBound)!))
+                        range = element.range(of: Configuration.Tag.TagSpanEnd)
+                        element = element.substring(to: (range?.lowerBound)!)
+                        scores.append(element)
+                    }
+                    range = gameHTML?.range(of: Configuration.Tag.TagTeamAway)
+                    if range != nil { // found away team
+                        element = (gameHTML!.substring(from: (range?.upperBound)!))
+                        range = element.range(of: Configuration.Tag.TagSpanEnd)
+                        element = element.substring(to: (range?.lowerBound)!)
+                        awayTeams.append(element)
+                    }
                 }
             }
         } else {
@@ -133,7 +158,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return result.replacingOccurrences(of: "   ", with: "")
     }
 
-    //MARK: - JSON de-/serialization auxiliary functions
+    //MARK: - JSON de-/serialization auxiliary functions - UNUSED
 
     /**
      * Auxiliary function that obtain a json from the serialized one

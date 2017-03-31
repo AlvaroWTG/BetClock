@@ -22,6 +22,10 @@ struct Configuration {
     }
     struct Tag { // Constants for tags on the HTML
         static let TagInPlay = "<span class=\"inplaynow-score\">"
+        static let TagTeamHome = "<span class=\"home-team\">"
+        static let TagTeamAway = "<span class=\"away-team\">"
+        static let TagScore = "<span class=\"result\">"
+        static let TagSpanEnd = "</span>"
         static let TagSpan = "span"
     }
 }
