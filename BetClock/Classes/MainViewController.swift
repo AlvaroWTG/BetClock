@@ -92,33 +92,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         navigationItem.title = "BetClock"
     }
 
-    /**
-     * Auxiliary function that post a request with a body
-     * @param requestSession The initial request session
-     * @param body The http body of the request
-     * @return result The resulting arguments of the response
-     */
-    func postRequest() -> NSDictionary {
-        let request = NSMutableURLRequest.init(url: URL.init(string: "https://api.betfair.com/exchange/betting/rest/v1.0/")!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        do {
-            var response: URLResponse?
-            NSLog("[NSURLConnection] Log: Sending synch request %@", request.url?.absoluteString ?? "")
-            let responseData = try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response)
-            return deserializeJson(serializedJson: responseData as NSData)
-        } catch let error as NSError {
-            NSLog("[NSURLConnection] Error! Found an error. Error %d: %@", error.code, error.localizedDescription)
-        }
-        return NSDictionary.init()
-    }
-
     //MARK: - JSON de-/serialization auxiliary functions
 
     /**
      * Auxiliary function that obtain a json from the serialized one
-     * @param serializedJson The JSON object serialized
-     * @return json The json object obtained from the body
+     * - parameter serializedJson: The JSON object serialized
      */
     func deserializeJson(serializedJson: NSData) -> NSDictionary {
         let stringSerializedJson = String(data: serializedJson as Data, encoding: String.Encoding.utf8) ?? "Data could not be printed"
@@ -137,9 +115,26 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     /**
+     * Auxiliary function that post a request and returns the result
+     */
+    func postRequest() -> NSDictionary {
+        let request = NSMutableURLRequest.init(url: URL.init(string: "https://api.betfair.com/exchange/betting/rest/v1.0/")!, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            var response: URLResponse?
+            NSLog("[NSURLConnection] Log: Sending synch request %@", request.url?.absoluteString ?? "")
+            let responseData = try NSURLConnection.sendSynchronousRequest(request as URLRequest, returning: &response)
+            return deserializeJson(serializedJson: responseData as NSData)
+        } catch let error as NSError {
+            NSLog("[NSURLConnection] Error! Found an error. Error %d: %@", error.code, error.localizedDescription)
+        }
+        return NSDictionary.init()
+    }
+
+    /**
      * Auxiliary function that serializes a JSON object
-     * @param json The JSON object received for the body
-     * return serializedJson The JSON object serialized
+     * - parameter json: The JSON object received for the body
      */
     func serializeJson(json: NSDictionary) -> NSData {
         do {
